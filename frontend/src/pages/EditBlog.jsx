@@ -12,7 +12,7 @@ const EditBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/editblog?blogId=${id}`, {
+        const res = await fetch(`https://blogging-app-wfut.onrender.com/editblog?blogId=${id}`, {
           credentials: "include",
         });
         const data = await res.json();
@@ -33,7 +33,7 @@ const EditBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:3000/updateblog?blogId=${id}`, {
+      const res = await fetch(`https://blogging-app-wfut.onrender.com/updateblog?blogId=${id}`, {
         method: "POST", // Keeping POST as per your backend router
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, body }),

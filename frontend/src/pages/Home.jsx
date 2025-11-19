@@ -9,7 +9,7 @@ const Home = () => {
   const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/?page=${page}&sort=${sort}`)
+    fetch(`https://blogging-app-wfut.onrender.com/?page=${page}&sort=${sort}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

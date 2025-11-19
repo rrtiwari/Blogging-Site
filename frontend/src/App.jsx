@@ -14,13 +14,13 @@ function App() {
 
   // Check if user is logged in on initial load
   useEffect(() => {
-    fetch("http://localhost:3000/check-session", { credentials: "include" })
+    fetch("https://blogging-app-wfut.onrender.com/check-session", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setIsAuthenticated(data.isAuthenticated));
   }, []);
 
   const handleLogout = async () => {
-    await fetch("http://localhost:3000/logout");
+    await fetch("https://blogging-app-wfut.onrender.com/logout");
     setIsAuthenticated(false);
   };
 

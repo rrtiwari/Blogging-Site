@@ -8,7 +8,7 @@ const AddBlog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3000/createblog", {
+    const res = await fetch("https://blogging-app-wfut.onrender.com/createblog", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, body }),

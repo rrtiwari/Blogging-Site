@@ -5,7 +5,7 @@ const MyBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   const fetchMyBlogs = async () => {
-    const res = await fetch("http://localhost:3000/myblog", {
+    const res = await fetch("https://blogging-app-wfut.onrender.com/myblog", {
       credentials: "include",
     });
     const data = await res.json();
@@ -20,7 +20,7 @@ const MyBlogs = () => {
     if (!window.confirm("Delete this blog?")) return;
 
     // CHANGED: Added credentials: 'include' so the backend knows who you are
-    const res = await fetch(`http://localhost:3000/deleteblog?blogId=${id}`, {
+    const res = await fetch(`https://blogging-app-wfut.onrender.com/deleteblog?blogId=${id}`, {
       method: "GET",
       credentials: "include",
     });
