@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --theme-primary: rgb(17, 97, 134);
+  --theme-dark: rgb(12, 70, 97);
+  --theme-light: rgba(17, 97, 134, 0.1);
+  --text-primary: #333;
+  --text-secondary: #666;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f7f6;
+  --border-color: #ddd;
+  --danger: rgb(220, 38, 38);
+  --danger-hover: rgb(185, 28, 28);
+  --success: rgb(16, 185, 129);
+  --success-hover: rgb(13, 148, 106);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.1);
+  --header-height: 70px;
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  padding-top: var(--header-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--theme-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--theme-dark);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--theme-primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.header .title {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tab {
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.tab > a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin: 0;
+  display: block;
+}
+
+.tab:hover {
+  border-bottom-color: white;
+}
+
+.header .logout button,
+.header .logout a {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.header .logout button:hover,
+.header .logout a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-div {
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px 40px;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.wrapper h2 {
+  text-align: center;
+  color: var(--theme-primary);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.wrapper a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-secondary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 3px var(--theme-light);
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+button[type="submit"],
+input[type="submit"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--theme-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--theme-dark);
+}
+
+.main-myblog,
+.main-addblog {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.main-myblog h1,
+.main-addblog h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: var(--theme-primary);
+}
+
+.main-myblog .sort-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.sort-section label {
+  font-weight: 500;
+}
+
+.sort-section select {
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+
+.main-myblog > a.add-btn {
+  display: inline-block;
+  background-color: var(--success);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  margin-bottom: 25px;
+  transition: background-color 0.2s ease;
+}
+
+.main-myblog > a.add-btn:hover {
+  background-color: var(--success-hover);
+  color: white;
+}
+
+.blog {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.blog:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.blog h3 {
+  font-size: 1.75rem;
+  color: var(--theme-primary);
+  margin-bottom: 10px;
+}
+
+.blog p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Metadata (Date, UserID) */
+.blog p:last-child {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0;
+}
+.blog p:nth-last-child(2) {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+/* Edit/Delete Buttons */
+.blog-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+.blog-actions a,
+.blog-actions button {
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+.blog-actions .edit-btn {
+  background-color: var(--success);
+}
+.blog-actions .edit-btn:hover {
+  background-color: var(--success-hover);
+  color: white;
+}
+
+.blog-actions .delete-btn {
+  background-color: var(--danger);
+}
+.blog-actions .delete-btn:hover {
+  background-color: var(--danger-hover);
+  color: white;
+}
+
+/* ============================================
+7. BLOG FORMS (Add/Edit)
+============================================
+*/
+.main-addblog {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 30px 40px;
+}
+
+/* ============================================
+8. PAGINATION
+============================================
+*/
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Updates for React Buttons in Pagination */
+.pagination button,
+.pagination a {
+  padding: 8px 14px;
+  text-decoration: none;
+  background-color: var(--bg-primary);
+  color: var(--theme-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: fit-content;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.pagination button:hover,
+.pagination a:hover {
+  background-color: var(--theme-light);
+  border-color: var(--theme-primary);
+  transform: translateY(-2px);
+}
+
+.pagination .activePage {
+  background-color: var(--theme-primary);
+  color: white;
+  border-color: var(--theme-primary);
+}
+
+/* ============================================
+9. MESSAGES & ALERTS
+============================================
+*/
+/* Catches messages in forms */
+form p {
+  background-color: #fde8e8;
+  color: var(--danger);
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Catches messages on list pages (Home, MyBlogs) */
+.main-myblog > p {
+  background-color: #fde8e8;
+  color: var(--danger);
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+10. RESPONSIVE DESIGN
+============================================
+*/
+@media (max-width: 768px) {
+  .header {
+    padding: 0 15px;
+  }
+
+  .header .title {
+    font-size: 1.3rem;
+  }
+
+  .tab > a {
+    padding: 22px 5px;
+    font-size: 0.9rem;
+  }
+
+  .header .logout button,
+  .header .logout a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .tabs {
+    gap: 10px;
+  }
+
+  .main-myblog,
+  .main-addblog {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .main-myblog h1,
+  .main-addblog h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .wrapper {
+    padding: 20px;
+  }
+
+  .wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog {
+    padding: 20px;
+  }
+
+  .blog h3 {
+    font-size: 1.5rem;
+  }
+}
