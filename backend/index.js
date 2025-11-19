@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 // Allow React to access backend (Assuming React runs on port 5173)
 app.use(
   cors({
-    origin: "http://localhost:5173", // Your React URL
+    origin: "https://blogging-site-rho-nine.vercel.app", // Your React URL
     credentials: true, // Essential for sessions to work
   })
 );
