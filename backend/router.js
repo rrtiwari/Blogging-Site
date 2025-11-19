@@ -8,7 +8,7 @@ const {
   logout,
   checkSession,
 } = require("./controllers/userController.js");
-const { requireAuth } = require("./utils/auth.js");
+const { requireAuth } = require("./utils/Auth.js");
 const {
   home,
   myBlog,
